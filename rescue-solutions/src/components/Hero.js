@@ -29,8 +29,9 @@ const Hero = () => {
 
         // Cleanup function
         return () => {
-            if (heroRef.current) {
-                observer.unobserve(heroRef.current);
+            const currentRef = heroRef.current;
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, []); // Empty dependency array means this runs once on mount

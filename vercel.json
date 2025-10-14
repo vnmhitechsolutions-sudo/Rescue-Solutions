@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "cd rescue-solutions && npm ci && npm run build",
+  "buildCommand": "cd rescue-solutions && npm ci && CI=false npm run build",
   "outputDirectory": "rescue-solutions/build",
   "installCommand": "cd rescue-solutions && npm ci",
   "framework": null,

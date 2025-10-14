@@ -166,7 +166,7 @@ const Services = () => {
             currentRef1.removeEventListener('scroll', scrollHandler1);
             currentRef2.removeEventListener('scroll', scrollHandler2);
         };
-    }, [isMobile]); // Re-run effect when isMobile changes
+    }, [isMobile, handleScroll]); // Re-run effect when isMobile or handleScroll changes
     // Removed 'hasSwiped' from dependencies to prevent excessive re-renders/listener re-attachment
 
     // --- ARROW NAVIGATION LOGIC ---

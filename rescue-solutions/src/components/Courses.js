@@ -24,8 +24,9 @@ const useScrollAnimation = (ref, threshold = 0.1) => {
         }
 
         return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
+            const currentRef = ref.current;
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, [ref, isVisible, threshold]);

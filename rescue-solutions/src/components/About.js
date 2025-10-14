@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
 // Assuming you are placing the image in public/images/
-const aboutImage = '/images/about-image.jpg'; 
+// const aboutImage = '/images/about-image.jpg'; 
 
 const About = () => {
     return (

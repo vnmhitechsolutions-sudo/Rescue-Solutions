@@ -75,8 +75,9 @@ const Careers = () => {
         }
 
         return () => {
-            if (applicationFormRef.current) {
-                observer.unobserve(applicationFormRef.current);
+            const currentRef = applicationFormRef.current;
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, [imageAnimated]);

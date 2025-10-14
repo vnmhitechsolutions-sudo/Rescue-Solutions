@@ -198,7 +198,7 @@
 }
 
 .apply-form-wrapper {
-    background-image: url();
+    /* background-image: url(); */
     display: flex;
     gap: 40px;
     align-items: stretch;
