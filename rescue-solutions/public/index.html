@@ -1,18 +1,42 @@
-<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <!-- 1. CHANGE THIS LINE -->
-    <link rel="icon" href="./images/new logo.png" /> 
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- 2. CHANGE THIS LINE -->
-    <title>VNM Hitech Solutions</title> 
-    <!-- Optional: Also change the manifest icons if you want different sizes -->
-    <link rel="apple-touch-icon" href="./images/new logo.png" style="width: auto;"/> 
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Rescue Solutions - Professional IT Training and Development Services. Expert training in software development, cybersecurity, data science, and more." />
+    <meta name="keywords" content="IT training, software development, courses, programming, technology, cybersecurity, data science, DevOps, MERN stack" />
+    <meta name="author" content="Rescue Solutions" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Rescue Solutions - IT Training & Development" />
+    <meta property="og:description" content="Professional IT training and development services" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="%PUBLIC_URL%/images/headlogo.png" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rescue Solutions - IT Training & Development" />
+    <meta name="twitter:description" content="Professional IT training and development services" />
+    <meta name="twitter:image" content="%PUBLIC_URL%/images/headlogo.png" />
+    
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="%PUBLIC_URL%/images/headlogo.png" as="image" />
+    
+    <title>Rescue Solutions - IT Training & Development</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h1>Rescue Solutions</h1>
+        <p>You need to enable JavaScript to run this app.</p>
+        <p>Please enable JavaScript in your browser and refresh the page.</p>
+      </div>
+    </noscript>
     <div id="root"></div>
   </body>
 </html>
