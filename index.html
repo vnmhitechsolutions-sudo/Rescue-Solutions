@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VNM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #004d40; /* Dark Teal */
+            --secondary-color: #e0f2f1; /* Light Teal */
+            --accent-color: #ffb300; /* Amber */
+            --text-color: #333;
+            --light-text-color: #fff;
+            --font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            margin: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f4f7f6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .hero {
+            background-color: var(--secondary-color);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .hero .btn {
+            background-color: var(--accent-color);
+            color: var(--light-text-color);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background-color: #e6a200;
+        }
+
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .section-light {
+            background-color: #fff;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            background-color: var(--secondary-color);
+            padding: 30px;
+            margin: 15px;
+            border-radius: 10px;
+            width: calc(33% - 60px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer .social-icons {
+            margin-top: 10px;
+        }
+
+        footer .social-icons a {
+            color: var(--light-text-color);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .section h2 {
+                font-size: 2rem;
+            }
+            .feature-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">VNM Hitech Solutions</div>
+            <p>Connecting Passionate People with Critical Missions</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Your Partner in Rescue Jobs</h1>
+                <p>We are a new job portal committed to linking skilled individuals with mission-critical opportunities that make a real difference in the world. We're coming up with exciting projects soon!</p>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+        </section>
+
+        <section class="section section-light">
+            <div class="container">
+                <h2>Our Mission</h2>
+                <p>At VNM Hitech Solutions, our goal is to streamline the hiring process for jobs that matter. We believe in providing a platform where purpose-driven careers are easy to find, and where every job has a positive impact on the community.</p>
+                <div class="features">
+                    <div class="feature-card">
+                        <h3>Niche Focus</h3>
+                        <p>We specialize exclusively in rescue and humanitarian-focused jobs, ensuring a curated experience for both employers and job seekers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Purpose-Driven</h3>
+                        <p>We connect you with careers that offer more than a paycheck—they offer a chance to make a tangible difference in people's lives.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Community Building</h3>
+                        <p>We aim to be more than a job board. Our goal is to build a community of like-minded professionals dedicated to service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Interested in partnering with us or just want to learn more? We'd love to hear from you. We are not actively hiring but feel free to reach out to us and we'll get back to you as soon as we can.</p>
+                <a href="mailto:info@rescuesolutions.com" class="btn">Send an Email</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 VNM Hitech Solutions. All Rights Reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>cd

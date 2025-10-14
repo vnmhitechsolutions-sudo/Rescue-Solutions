@@ -1,0 +1,256 @@
+.services-section h2, .services-section .tag, .services-section .services-subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.wholeservices{
+    background-color: #edeeef; 
+}
+.services-grid {
+    /* DESKTOP/TABLET GRID (4 columns) */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left; /* Default text alignment for readability */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: #f0ebff;
+}
+
+.service-card h3 {
+    margin: 0;
+}
+
+.service-card p {
+    color: #777;
+    font-size: 0.95rem;
+}
+
+.service-card ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 0;
+}
+
+.service-card li {
+    color: #6a00ff;
+    font-size: 0.9rem;
+    background-color: #e9e5ff;
+    border-radius: 5px;
+    padding: 3px 8px;
+    white-space: nowrap;
+}
+
+/* ---------------------------------- */
+/* MOBILE LAYOUT & CAROUSEL STYLES    */
+/* ---------------------------------- */
+
+/* Container for both rows on mobile (used by Services.js) */
+.services-mobile-container {
+    display: flex;
+    flex-direction: column; /* Stack the two carousel rows vertically */
+    gap: 20px; /* Space between the two rows */
+    margin-top: 30px;
+    position: relative; /* Base for indicator positioning */
+}
+
+/* Indicator Text Styles */
+.carousel-indicator-box {
+    text-align: center;
+    margin-bottom: 10px;
+    pointer-events: none; /* Allows clicks/swipes to pass through to carousel */
+    z-index: 10;
+}
+
+.carousel-indicator-text {
+    font-size: 0.85rem;
+    color: #6a00ff;
+    background-color: #e9e5ff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    display: inline-block;
+    animation: pulse 1.5s infinite; /* Gentle pulsing animation */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* NEW KEYFRAME FOR ARROW BREATHING ANIMATION */
+@keyframes breathe {
+    0% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.1); }
+    100% { transform: translateY(-50%) scale(1); }
+}
+
+/* NEW: Individual Wrapper for each carousel row to house arrows */
+.carousel-row-wrapper {
+    position: relative;
+    /* This padding is critical as it defines the boundary where arrows sit */
+    padding: 0 15px; 
+}
+
+/* NEW: Styles for the navigation buttons (Arrows) */
+.carousel-nav-button {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%);
+    width: 35px; /* Slightly larger touch target */
+    height: 35px;
+    background: rgba(106, 0, 255, 1); /* Opaque background */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s; 
+    
+    opacity: 1;
+    visibility: visible;
+}
+
+.carousel-nav-button:hover {
+    background: #5500cc;
+}
+
+.carousel-nav-button.prev {
+    left: 0;
+}
+
+.carousel-nav-button.next {
+    right: 0;
+}
+
+/* ------------------------------------------------------------- */
+/* ARROW LOGIC BASED ON CAROUSEL STATE (Classes added by JS)     */
+/* ------------------------------------------------------------- */
+
+/* 1. Hide Left Arrow at Start Position */
+.carousel-row-wrapper.at-start .carousel-nav-button.prev {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Ensures it can't be clicked */
+}
+
+/* 2. Hide Right Arrow at End Position */
+.carousel-row-wrapper.at-end .carousel-nav-button.next {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* 3. Apply Breathing Animation to Right Arrow at Start Position */
+.carousel-row-wrapper.at-start .carousel-nav-button.next {
+    animation: breathe 1.5s infinite ease-in-out;
+}
+
+/* 4. Remove Breathing Animation from Next Arrow when Scrolled (Not at Start) */
+.carousel-row-wrapper:not(.at-start) .carousel-nav-button.next {
+    animation: none;
+    transform: translateY(-50%) scale(1); /* Reset transform to stop animation jump */
+}
+
+/* Base style for the actual carousel row */
+.services-carousel {
+    display: flex;
+    flex-wrap: nowrap; /* CRITICAL: Prevents cards from wrapping */
+    
+    overflow-x: auto; /* Enables horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Makes cards snap into place */
+    -webkit-overflow-scrolling: touch; 
+    
+    gap: 20px; 
+    padding: 0; 
+    padding-bottom: 10px; 
+    
+    width: 100%; 
+    height: auto; 
+    
+    /* Fading edge effect on the right side only, for a visual cue */
+    mask-image: linear-gradient(to right, black 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 95%, transparent 100%);
+    
+    /* Hide the scrollbar for a cleaner look */
+    scrollbar-width: none; 
+}
+
+.services-carousel::-webkit-scrollbar {
+    display: none; 
+}
+
+/* Style for individual cards in the carousel */
+.services-carousel .service-card {
+    /* Card takes up 85% of the scroll area width for a single-card view */
+    flex: 0 0 85%; 
+    
+    scroll-snap-align: start; /* Aligns the start of the card when swiping */
+    box-sizing: border-box; 
+    
+    /* Ensure content alignment is left-aligned */
+    text-align: left;
+    height: auto;
+    min-height: 350px;
+}
+
+/* Alignment fixes for content inside the card */
+.services-carousel .service-card .service-icon {
+    margin: 0 0 15px 0; /* Align icon to the left */
+}
+
+.services-carousel .service-card ul {
+    justify-content: flex-start; /* Align list items to the left */
+}
+
+/* ----------------- */
+/* Media Queries (Logic to toggle layouts based on screen width) */
+/* ----------------- */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Make buttons visible on mobile and minimized desktop browser */
+    .carousel-nav-button {
+        display: flex; 
+    }
+    
+    /* Hide desktop grid layout and show mobile flex container */
+    .services-grid {
+        display: none; 
+    }
+    .services-mobile-container {
+        display: flex;
+    }
+}
+/* Re-enable grid for screens larger than 768px and hide mobile carousel */
+@media (min-width: 769px) {
+    .services-mobile-container {
+        display: none; 
+    }
+}

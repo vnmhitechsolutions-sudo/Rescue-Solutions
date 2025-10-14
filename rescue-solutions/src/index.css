@@ -1,0 +1,135 @@
+/* Import Google Fonts for a consistent look. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Basic setup for the whole page. */
+* {
+  box-sizing: border-box; /* This makes it easier to manage sizing. */
+}
+
+html, body, #root {
+  height: 100%; /* Ensures the app takes up the full viewport height. */
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f9fa; /* The light gray background color seen in your images. */
+  color: #333; /* Default text color. */
+}
+
+/* Typography styles for a consistent hierarchy. */
+h1, h2, h3, h4, h5, h6 {
+  color: #1e1e3f; /* Darker heading color. */
+  line-height: 1.2;
+}
+
+/* Custom class for the primary brand color. */
+.text-primary {
+  color: #6a00ff; /* Your primary purple color. */
+}
+
+/* General button and link styles. */
+.button {
+  background-color: #6a00ff;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+   /* To allow padding and other box model properties. */
+}
+
+.button:hover {
+  background-color: #9a02ff;
+}
+
+/* Tag/badge styles like "Our Services" and "About Us". */
+.tag {
+  background-color: #e9e5ff;
+  color: #6a00ff;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Reusable section containers for consistent spacing. */
+.section-container {
+  padding: 80px 10%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Reusable card styles with shadows. */
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+}
+/* ... (Existing code from before) ... */
+
+/* ----------------- */
+/* Global Media Queries */
+/* ----------------- */
+
+/* Tablet & Mobile devices */
+@media (max-width: 1024px) {
+  .section-container {
+    padding: 60px 5%; /* Reduce padding on smaller screens */
+  }
+
+  h1 {
+    font-size: 2.5rem; /* Make heading smaller */
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .section-container {
+    padding: 40px 5%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 1024px) {
+    .section-container {
+        padding: 60px 5%;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 412px) {
+    .section-container {
+        padding: 40px 5%;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}

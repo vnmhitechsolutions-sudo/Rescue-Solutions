@@ -1,0 +1,131 @@
+/* ---------------------------------- */
+/* 1. BASE STYLES & LAYOUT            */
+/* ---------------------------------- */
+.footer {
+    background-color: #1e1e3f;
+    color: #ccc;
+    padding: 00px 0; /* Reduced padding for compact footer */
+}
+
+.footer-content {
+    display: flex;
+    /* Use baseline to align the first line of text/heading */
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Give columns specific sizes for balance */
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    /* By default, columns are equal, but we override this below */
+}
+
+/* Explicitly give the Brand column (first column) more width */
+.footer-col.brand-col {
+    flex-basis: 40%; /* Give 40% of the space to the brand column */
+}
+
+/* Give Contact and Legal columns less space (about 30% each) */
+.footer-col:not(.brand-col) {
+    flex-basis: 30%;
+}
+
+.footer-col .logo {
+    /* Reduced font size for single-line text */
+    font-size: 1.3rem; 
+    font-weight: 700;
+    color: #6a00ff;
+    margin-top: 25px;
+}
+
+.footer-col h4 {
+    color: white;
+    font-size: 1.1rem;
+    margin-top: 30px;
+
+}
+
+.footer-col p {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin-top: -5px;
+}
+
+.footer-col li {
+    margin-bottom: 8px;
+}
+
+.footer-col a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: #6a00ff;
+}
+
+/* Social Icon Styling */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: white; 
+}
+
+.social-icons a:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid #333;
+    text-align: center;
+    padding-bottom: 5px;
+    margin-bottom: 40px;
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 10px;
+}
+
+
+/* ---------------------------------- */
+/* MOBILE MEDIA QUERIES               */
+/* ---------------------------------- */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center; 
+    }
+
+    .footer-col {
+        align-items: center;
+        max-width: 100%;
+        text-align: center;
+        /* Reset flex-basis for mobile to ensure full width */
+        flex-basis: auto; 
+    }
+
+    .footer-col ul {
+        text-align: center;
+    }
+}

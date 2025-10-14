@@ -1,0 +1,388 @@
+/* ---------------------------------- */
+/* 1. Keyframes for Animation         */
+/* ---------------------------------- */
+
+@keyframes pan-x {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
+}
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes checkmark-draw {
+    0% { stroke-dashoffset: 24; }
+    100% { stroke-dashoffset: 0; }
+}
+
+/* ---------------------------------- */
+/* 2. Global & Hero Styles            */
+/* ---------------------------------- */
+
+.careers-page .section-container {
+    text-align: center;
+}
+.careers-hero {
+    /* Background Image & Overlay */
+    background-image:url("../images/careerbg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden; /* Important for background pan animation */
+    /* Add subtle pan animation */
+    animation: pan-x 30s linear infinite alternate;
+    animation: pan-y 40s linear infinite alternate; 
+}
+
+.careers-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 30px; /* Reduced space */
+}
+.careers-hero-content h1 {
+    font-size: 3rem;
+    margin-top: 15px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards 0.2s;
+}
+.careers-hero-content p {
+    color: #555;
+    font-size: 1.1rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards 0.4s;
+}
+.careers-hero-content .tag {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.subtitle-text {
+    max-width: 800px;
+    margin: 10px auto 30px; /* Reduced space */
+    color: #777;
+}
+
+
+/* ---------------------------------- */
+/* 3. Opening Positions Grid Styles   */
+/* ---------------------------------- */
+
+.opening-positions h2 {
+    margin-bottom: 10px;
+}
+
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Reduced space */
+    text-align: left;
+}
+
+.job-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px; /* Reduced min height */
+    padding: 25px;
+    border: 1px solid #eee;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    background-color: white;
+    cursor: pointer;
+}
+
+.job-card:hover {
+    transform: translateY(-5px) rotateZ(0.5deg); /* Added slight rotation */
+    box-shadow: 0 12px 25px rgba(106, 0, 255, 0.15); /* Stronger shadow */
+    background-color: #f9f9ff;
+}
+
+.job-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #6a00ff;
+}
+
+.job-description {
+    color: #555;
+    flex-grow: 1;
+    font-size: 0.95rem;
+}
+
+.job-meta {
+    display: flex;
+    gap: 15px; /* Reduced space */
+    margin: 15px 0;
+    font-size: 0.85rem; /* Smaller font */
+    color: #777;
+}
+
+.job-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.job-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.skill-tag {
+    background-color: #f0ebff;
+    color: #6a00ff;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.button-small {
+    background-color: #6a00ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px; /* Rounded button */
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+    align-self: flex-start;
+}
+
+.button-small:hover {
+    background-color: #5500cc;
+    transform: translateY(-1px);
+}
+
+
+/* ---------------------------------- */
+/* 4. Application Form & Images Styles*/
+/* ---------------------------------- */
+.apply-section {
+    padding-top: 40px; 
+}
+
+.apply-content-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: stretch; /* CRITICAL: Allows image and form to equalize height */
+    margin-top: 20px;
+}
+
+/* Image Column Styles */
+.image-column {
+    flex: 1;
+    position: relative;
+    max-width: 450px;
+    transition: all 0.5s ease-out; /* General transition */
+    
+    /* Animation Start State */
+    opacity: 0;
+    transform: translateX(-100px);
+}
+.image-column.animate-in {
+    /* Animation End State (Triggered by JS on scroll/click) */
+    animation: slideFromLeft 1s ease-out forwards;
+}
+
+.image-card-career {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    height: 100%; /* Ensure the card container takes full height */
+    
+    /* --- FIX: Remove padding so the image fills the space --- */
+    padding: 0; 
+    
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+}
+.career-image {
+    width: 100%;
+    height: 100%; /* Make image fill the height of its parent container */
+    display: block;
+    
+    /* --- FIX: Ensure the image covers the container if needed --- */
+    object-fit: cover; 
+}
+
+/* Form Column Styles */
+.form-column {
+    flex: 1.5;
+    padding: 30px;
+    text-align: left;
+}
+
+.job-application-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+/* CRITICAL FIX: Align the select box and URL input */
+.form-row-select {
+    align-items: center;
+}
+
+.job-application-form input,
+.job-application-form textarea,
+.job-application-form select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+    /* Ensure height is consistent across inputs and select */
+    height: 50px; 
+    appearance: none; /* Reset native select styling for consistency */
+}
+
+.job-application-form select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236a00ff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    padding-right: 30px; /* Space for the custom arrow */
+}
+
+.job-application-form textarea {
+    resize: vertical;
+    min-height: 120px;
+    height: auto; /* Reset fixed height for textarea */
+}
+
+.job-application-form select.placeholder-selected {
+    color: #999;
+}
+.job-application-form select:not(.placeholder-selected) {
+    color: #333;
+}
+
+
+.job-application-form button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+
+/* ---------------------------------- */
+/* 5. Success Modal Styles            */
+/* ---------------------------------- */
+.submission-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.submission-modal {
+    max-width: 400px;
+    text-align: center;
+    padding: 40px;
+    animation: zoomIn 0.3s ease-out; /* Apply zoom animation */
+}
+
+.submission-modal .check-icon {
+    margin-bottom: 20px;
+    stroke-dasharray: 24;
+    stroke-dashoffset: 24;
+    animation: checkmark-draw 0.5s ease-out 0.3s forwards;
+}
+
+.submission-title {
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.submission-message {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.close-button {
+    background-color: #6a00ff;
+}
+
+/* ---------------------------------- */
+/* 6. Responsive Adjustments          */
+/* ---------------------------------- */
+
+@media (max-width: 1024px) {
+    .jobs-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .apply-content-wrapper {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    .image-column, .form-column {
+        width: 100%;
+        max-width: 600px;
+        transform: none !important; /* Disable manual transform override on scroll trigger */
+    }
+    /* Set specific height for tablet image to maintain aspect ratio */
+    .image-column {
+         max-height: 400px;
+    }
+
+    .image-column.animate-in {
+        animation: none !important;
+        opacity: 1;
+        transform: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .careers-hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .jobs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .form-row-select {
+        flex-direction: column; /* Stack select and input vertically on mobile */
+    }
+}

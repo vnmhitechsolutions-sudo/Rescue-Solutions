@@ -1,0 +1,400 @@
+.courses-page {
+    /* Ensures modal overlay works correctly */
+    position: relative; 
+    min-height: 100vh;
+}
+
+/* ---------------------------------- */
+/* 1. Keyframes for Animation         */
+/* ---------------------------------- */
+
+/* Keyframe for subtle vertical background pan */
+@keyframes pan-y {
+    0% { background-position: 50% 0%; }
+    100% { background-position: 50% 100%; }
+}
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------------------------------- */
+/* 2. Global & Hero Styles            */
+/* ---------------------------------- */
+
+.courses-hero {
+    /* Background Image & Overlay */
+    background-image: linear-gradient(rgba(240, 248, 255, 0.85), rgba(240, 248, 255, 0.85)), url("../images/course1.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; 
+    /* NEW: Add subtle vertical pan animation */
+    animation: pan-y 40s linear infinite alternate; 
+    padding-bottom: 50px;
+    border-radius: 15px;
+}
+
+/* NEW: Initial hidden state and staggered animation for Hero content */
+.courses-hero-content .animate {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInUp 0.7s ease-out forwards;
+}
+
+/* NEW: Staggered delays for Hero content */
+.courses-hero-content .delay-0 { animation-delay: 0.1s; }
+.courses-hero-content .delay-1 { animation-delay: 0.3s; }
+.courses-hero-content .delay-2 { animation-delay: 0.5s; }
+
+
+.courses-hero-content {
+    color: #36383b;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+.courses-hero-content h1 {
+    font-size: 3rem;
+    margin-top: 15px;
+    color: #003674;
+}
+.courses-hero-content p {
+    color: #302f2f;
+    font-size: 1.1rem;
+}
+
+.subtitle-text {
+    max-width: 800px;
+    margin: 10px auto 40px;
+    color: #777;
+    font-size: 1.1rem;
+}
+
+/* --- Section Entrance Animation Base --- */
+.course-listings, .apply-course-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: none; /* Disable default transition */
+}
+.course-listings.animate-in, .apply-course-section.animate-in {
+    animation: slideInUp 0.8s ease-out forwards;
+}
+/* Apply staggered delay to course cards */
+.course-listings.animate-in .course-card {
+    opacity: 0;
+    animation: slideInUp 0.6s ease-out forwards;
+    /* Delay is set via inline style in JS */
+}
+
+/* --- Course Grid and Card Styles --- */
+
+/* ALIGNMENT FIX: Ensures section headings are left-aligned */
+.section-title.align-left {
+    text-align: left;
+}
+.subtitle-text.align-left {
+    text-align: left;
+    /* Reset auto margins to ensure alignment follows left edge of container */
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+.course-listings h2 {
+    margin-bottom: 10px;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: left;
+}
+
+.course-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0; 
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #eee;
+    background-color: white;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(106, 0, 255, 0.1);
+}
+
+.course-header {
+    height: 150px; 
+    overflow: hidden;
+}
+
+.course-title-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 15px;
+    font-weight: 700;
+    color: white;
+    font-size: 1.2rem;
+    background-size: cover;
+    background-position: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    background-color: #6a00ff; 
+}
+
+.course-body {
+    padding: 20px 25px;
+    flex-grow: 1;
+}
+
+.course-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.course-meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.course-footer {
+    border-top: 1px solid #eee;
+    padding: 15px 25px;
+    text-align: right;
+}
+
+.course-footer button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #ff9900;
+    transition: background-color 0.3s;
+}
+
+.course-footer button:hover {
+    background-color: #c27706;
+}
+
+
+/* --- Application Form Section --- */
+.apply-course-section {
+    padding-top: 60px;
+}
+
+.apply-form-wrapper {
+    background-image: url();
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+.form-decoration-column {
+    flex: 1;
+    display: flex;
+    max-width: 450px;
+}
+
+.decoration-card {
+    height: 100%; 
+    text-align: center;
+    padding: 30px;
+    background-color: #f4eef5;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* NEW STYLES FOR IMAGE OVERLAY */
+.image-overlay-wrapper {
+    position: relative; /* Container for absolute positioning */
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto 10px auto; /* Reduced bottom margin */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center perfectly */
+    z-index: 10;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9); /* Ensure readability */
+    background-color: rgba(0, 0, 0, 0.4); /* Dark background for text box */
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 0; /* Remove default margin */
+}
+/* END NEW STYLES FOR IMAGE OVERLAY */
+
+.consultation-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.contact-info-small {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.form-column {
+    flex: 1.5;
+    padding: 30px;
+    text-align: left;
+}
+
+.course-application-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row-select {
+    align-items: center; 
+}
+
+.course-application-form input,
+.course-application-form textarea,
+.course-application-form select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+    height: 50px;
+    appearance: none;
+}
+
+.course-application-form select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236a00ff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    padding-right: 30px;
+}
+
+.course-application-form textarea {
+    resize: vertical;
+    min-height: 160px; /* INCREASED HEIGHT for more space */
+    height: auto;
+}
+
+.course-application-form select.placeholder-selected {
+    color: #999;
+}
+.course-application-form select:not(.placeholder-selected) {
+    color: #333;
+}
+
+
+/* --- Submission Modal Styles (Reused from Careers) --- */
+.submission-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.submission-modal {
+    max-width: 400px;
+    text-align: center;
+    padding: 40px;
+    animation: zoomIn 0.3s ease-out;
+}
+
+.submission-modal .check-icon {
+    margin-bottom: 20px;
+    stroke-dasharray: 24;
+    stroke-dashoffset: 24;
+    animation: checkmark-draw 0.5s ease-out 0.3s forwards;
+}
+
+.submission-title {
+    color: #6a00ff;
+    margin-bottom: 10px;
+}
+
+.submission-message {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.close-button {
+    background-color: #6a00ff;
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 1024px) {
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .apply-form-wrapper {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    .form-decoration-column, .form-column {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .courses-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+    
+    .courses-hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .form-row-select {
+        flex-direction: column; /* Stack select and input vertically on mobile */
+    }
+}

@@ -1,0 +1,99 @@
+.tagabout{
+    background-color: #e9e5ff;
+    color: #6a00ff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+}
+.about-section {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin: 10px 0 20px;
+}
+
+.about-content p {
+    color: #777;
+}
+
+.what-we-believe ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.what-we-believe li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #555;
+}
+
+.about-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.image-card {
+    padding: 0px;
+}
+
+.about-image {
+    margin-top: 50px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.mission-card {
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+/* --- About Media Queries --- */
+@media (max-width: 1024px) {
+    .about-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .what-we-believe ul {
+        grid-template-columns: 1fr; /* Stack the list items on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .about-right, .about-content {
+        flex: none; /* Make sections full width on mobile */
+    }
+
+    .about-content h2 {
+        font-size: 1.8rem; /* Smaller heading for mobile */
+    }
+    
+    .what-we-believe ul {
+        grid-template-columns: 1fr; /* Ensure list items are stacked on mobile */
+    }
+}
+/* ... existing styles ... */
+@media (max-width: 412px) {
+    .about-content h2 {
+        font-size: 1.8rem; /* Adjusted About H2 for mobile */
+    }
+    .about-content p {
+        font-size: 0.9rem; /* Adjusted paragraph size */
+    }
+}

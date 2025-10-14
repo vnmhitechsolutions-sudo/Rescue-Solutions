@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #1e1e3f;
+    line-height: 1.2;
+}
+
+.text-primary {
+    color: #6a00ff;
+}
+
+.section-container {
+    padding: 80px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+.button {
+    background-color: #6a00ff;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #5500cc;
+}
+
+.tag {
+    background-color: #e9e5ff;
+    color: #6a00ff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Ensure the root element is set to 100% height and width */
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Media Queries */
+@media (max-width: 1024px) {
+    .section-container {
+        padding: 60px 5%;
+    }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2.2rem; }
+}
+
+@media (max-width: 768px) {
+    .section-container {
+        padding: 40px 5%; /* Optimized padding for mobile */
+    }
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+    
+    .card {
+        padding: 20px; /* Reduced card padding on mobile */
+    }
+}
+.legal-content{
+    text-align: left;
+}
+@media (max-width: 412px) {
+    .section-container {
+        padding: 40px 5%; /* Optimized padding for mobile */
+    }
+    
+    h1 { font-size: 2.2rem; } /* Corrected H1 size for mobile */
+    h2 { font-size: 1.8rem; } /* Corrected H2 size for mobile */
+    h3 { font-size: 1.4rem; } /* Add H3 size for cards */
+    
+    .card {
+        padding: 20px; /* Reduced card padding on mobile */
+    }
+
+     .legal-content p, .legal-content li  {
+        font-size: 0.9rem; /* Make the body text smaller for better readability on small screens */
+    }
+     .legal-content h2
+     {
+        font-size: 1.2rem; /* Adjusted Legal H2 for mobile */
+     }
+     .text-primary {
+        font-size: 1.6rem; /* Adjusted primary text for mobile */
+}
+.section-container {
+    padding: 30px 5%;
+    font-size: 0.9rem; /* Further reduced padding for very small screens */
+}
+.section-container h2 {
+    font-size: 1.6rem; /* Further reduced H2 size for very small screens */
+}
+}
+/* ----------------- */
+/* Existing Styles   */
+/* ----------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #1e1e3f;
+    line-height: 1.2;
+}
+/* ... rest of existing styles ... */
+
+.text-primary {
+    color: #6a00ff;
+}
+
+.section-container {
+    padding: 80px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+.button {
+    background-color: #6a00ff;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #5500cc;
+}
+
+.tag {
+    background-color: #e9e5ff;
+    color: #6a00ff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.legal-content {
+    text-align: justify;
+}
+
+
+/* --- GLOBAL ANIMATIONS (Needed for Modal and others) --- */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes checkmark-draw {
+    0% {
+        stroke-dashoffset: 24;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* --- Mobile Font Sizes --- */
+@media (max-width: 768px) {
+    .section-container {
+        padding: 40px 5%; 
+    }
+    
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.4rem; }
+    
+    .card {
+        padding: 20px;
+    }
+
+    .legal-content p, .legal-content li {
+        font-size: 0.9rem;
+    }
+}
+/* ----------------- */
+/* Existing Styles   */
+/* ----------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #1e1e3f;
+    line-height: 1.2;
+}
+/* ... rest of existing styles ... */
+
+.text-primary {
+    color: #6a00ff;
+}
+
+.section-container {
+    padding: 80px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+.button {
+    background-color: #6a00ff;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #5500cc;
+}
+
+.tag {
+    background-color: #e9e5ff;
+    color: #6a00ff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.legal-content {
+    text-align: justify;
+}
+
+
+/* --- GLOBAL ANIMATIONS (Needed for Modal and others) --- */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes checkmark-draw {
+    0% {
+        stroke-dashoffset: 24;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* --- Mobile Font Sizes --- */
+@media (max-width: 768px) {
+    .section-container {
+        padding: 40px 5%; 
+    }
+    
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.4rem; }
+    
+    .card {
+        padding: 20px;
+    }
+
+    .legal-content p, .legal-content li {
+        font-size: 0.9rem;
+    }
+}
