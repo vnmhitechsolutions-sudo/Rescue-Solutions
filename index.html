@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rescue Solutions - Professional IT Training and Development Services">
+    <meta name="keywords" content="IT training, software development, courses, programming, technology">
+    <meta name="author" content="Rescue Solutions">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Rescue Solutions - IT Training & Development">
+    <meta property="og:description" content="Professional IT training and development services">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rescue Solutions - IT Training & Development">
+    <meta name="twitter:description" content="Professional IT training and development services">
+    
+    <title>Rescue Solutions - IT Training & Development</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/rescue-solutions/public/favicon.ico">
+    <link rel="apple-touch-icon" sizes="192x192" href="/rescue-solutions/public/logo192.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/rescue-solutions/public/logo512.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/rescue-solutions/public/images/headlogo.png" as="image">
+    
+    <!-- CSS Reset and Base Styles -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .loading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        /* Hide loading when React app loads */
+        .react-loaded .loading-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-container">
+        <div>
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Loading Rescue Solutions...</div>
+        </div>
+    </div>
+    
+    <!-- React App Root -->
+    <div id="root"></div>
+    
+    <!-- Fallback for if React doesn't load -->
+    <noscript>
+        <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+            <h1>Rescue Solutions</h1>
+            <p>JavaScript is required to view this application. Please enable JavaScript in your browser.</p>
+            <p>If you continue to have issues, please contact support.</p>
+        </div>
+    </noscript>
+    
+    <!-- Redirect to React App -->
+    <script>
+        // Redirect to the React app
+        window.location.href = '/rescue-solutions/build/index.html';
+    </script>
+</body>
+</html>

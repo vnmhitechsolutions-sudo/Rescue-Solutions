@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "buildCommand": "cd rescue-solutions && npm ci && npm run build",
+  "outputDirectory": "rescue-solutions/build",
+  "installCommand": "cd rescue-solutions && npm ci",
+  "framework": null,
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/rescue-solutions/build/static/$1"
+    },
+    {
+      "src": "/images/(.*)",
+      "dest": "/rescue-solutions/build/images/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/rescue-solutions/build/favicon.ico"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/rescue-solutions/build/manifest.json"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/rescue-solutions/build/robots.txt"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/rescue-solutions/build/index.html"
+    }
+  ]
+}
