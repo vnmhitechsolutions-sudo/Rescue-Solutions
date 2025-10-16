@@ -60,6 +60,7 @@
 
 .hero-content p {
     color: #777;
+    font-size: 1.1rem;
 }
 
 .hero-image-container {
@@ -68,12 +69,19 @@
     justify-content: flex-end;
 }
 
-
+/* FIX: Remove padding added by global .card class to make the image fill the container */
+.hero-image-card {
+    padding: 0; /* REMOVED PADDING */
+    margin-top: 0; /* Ensure no extra space at the top */
+}
 
 .hero-image {
-    width: 130%;
+    /* Set to 100% to fill the now-padding-less container */
+    width: 170%; 
     border-radius: 10px;
+    display: block; /* Ensures no extra space below the image */
 }
+
 
 /* ----------------- */
 /* Hero Media Queries */
@@ -81,16 +89,15 @@
 @media (max-width: 1024px) {
     .hero-section {
         flex-direction: column;
-        /* Removed text-align: center here */
         align-items: center;
     }
     
     .hero-content {
-        order: 2; /* Puts text below the image on tablets */
-        text-align: left; /* Ensure content starts at the left boundary */
-        padding: 0 5%; /* Add horizontal padding relative to content width */
+        order: 2; 
+        text-align: left; 
+        padding: 0 5%; 
         width: 100%;
-        max-width: 600px; /* Optional: Limit width on larger tablets for better readability */
+        max-width: 600px;
     }
     
     .hero-content h1 {
@@ -102,7 +109,7 @@
     }
     
     .hero-image-container {
-        order: 1; /* Puts image at the top */
+        order: 1; 
         justify-content: center;
     }
 }
@@ -110,33 +117,33 @@
 @media (max-width: 768px) {
     .hero-section {
         flex-direction: column;
-        text-align: left; /* Keep text left-aligned */
-        padding: 40px 5%; /* Use 5% padding globally for the section */
+        text-align: left; 
+        padding: 40px 5%; 
     }
     
     .hero-content {
-        order: 1; /* Puts the text before the image on mobile */
+        order: 1; 
         flex: none;
         width: 100%;
-        padding: 0; /* Remove extra padding inherited from 1024px query */
+        padding: 0; 
     }
     
     .hero-image-container {
         order: 2;
-        width: 100%; /* Makes the image full width on mobile */
-        margin-top: 20px; /* Add spacing below the text */
+        width: 100%; 
+        margin-top: 20px; 
     }
 
     .hero-image {
-        width: 100%; /* Image fits container */
+        width: 100%; 
     }
 }
 /* ... existing styles ... */
 @media (max-width: 412px) {
     .hero-content h1 {
-        font-size: 2.2rem; /* Adjusted Hero H1 for mobile */
+        font-size: 2.2rem; 
     }
     .hero-content .subtitle {
-        font-size: 1.1rem; /* Adjusted subtitle size */
+        font-size: 1.1rem; 
     }
 }

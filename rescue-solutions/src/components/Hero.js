@@ -44,8 +44,8 @@ const Hero = () => {
                 {/* --- COMPANY NAME HEADING (Made bigger for prominence) --- */}
                 {/* Note: Removed class 'animate' from the company name heading as it contains complex inline styles 
                    and needs to be present early for consistent layout. */}
-                <h1 style={{ 
-                    fontSize: '2.5rem', 
+                <h1  style={{ 
+                    fontSize: '2 rem', 
                     fontWeight: 'bold', 
                     marginBottom: '10px' 
                 }}>
