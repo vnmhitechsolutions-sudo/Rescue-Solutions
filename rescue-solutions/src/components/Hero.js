@@ -41,12 +41,13 @@ const Hero = () => {
         <section id="home" className="hero-section section-container" ref={heroRef}>
                 
             <div className="hero-content">
-                {/* Add a new class 'animate' to the elements you want to animate */}
                 {/* --- COMPANY NAME HEADING (Made bigger for prominence) --- */}
-                <h1 className="animate delay-0" style={{ 
-                    fontSize: '2.5rem', /* Increased size for desktop prominence */
+                {/* Note: Removed class 'animate' from the company name heading as it contains complex inline styles 
+                   and needs to be present early for consistent layout. */}
+                <h1 style={{ 
+                    fontSize: '2.5rem', 
                     fontWeight: 'bold', 
-                    marginBottom: '10px' /* Reduced margin to bring closer to headline */
+                    marginBottom: '10px' 
                 }}>
                     <span style={{ color: '#270d88ff' }}>VNM</span>
                     <span style={{ color: '#3e4343ff', fontWeight: 'normal', margin: '0 5px' }}>Hitech</span>

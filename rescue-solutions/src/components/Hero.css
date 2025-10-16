@@ -20,7 +20,7 @@
 }
 
 /* ------------------------------------ */
-/* Animated State (Triggered by JS)   */
+/* Animated State (Triggered by JS)   */
 /* ------------------------------------ */
 .animated .animate {
     animation: fadeInUp 0.8s ease-out forwards;
@@ -44,14 +44,13 @@
 }
 
 .hero-content {
- 
     flex: 1;
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
     margin: 20px 0;
-       margin-top: 0px;
+    margin-top: 0px;
 }
 
 .hero-content .subtitle {
@@ -82,13 +81,16 @@
 @media (max-width: 1024px) {
     .hero-section {
         flex-direction: column;
-        text-align: center;
+        /* Removed text-align: center here */
         align-items: center;
     }
     
     .hero-content {
         order: 2; /* Puts text below the image on tablets */
-        text-align: left;
+        text-align: left; /* Ensure content starts at the left boundary */
+        padding: 0 5%; /* Add horizontal padding relative to content width */
+        width: 100%;
+        max-width: 600px; /* Optional: Limit width on larger tablets for better readability */
     }
     
     .hero-content h1 {
@@ -108,13 +110,15 @@
 @media (max-width: 768px) {
     .hero-section {
         flex-direction: column;
-        text-align: center;
-        padding: 40px 5%; /* Adjusted padding for mobile */
+        text-align: left; /* Keep text left-aligned */
+        padding: 40px 5%; /* Use 5% padding globally for the section */
     }
     
     .hero-content {
         order: 1; /* Puts the text before the image on mobile */
         flex: none;
+        width: 100%;
+        padding: 0; /* Remove extra padding inherited from 1024px query */
     }
     
     .hero-image-container {
