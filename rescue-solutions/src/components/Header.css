@@ -9,11 +9,17 @@
     z-index: 1000;
     transition: padding 0.3s ease;
 }
-
+.hname{
+    margin-right: 340px;
+    color: #022f77;
+    position: sticky;
+     z-index: 1000;
+    transition: padding 0.3s ease;
+}
 .logo {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
+    text-decoration:#6a00ff;
+    display:flex;
+    align-items: flex-end;
 }
 
 .logo-img {

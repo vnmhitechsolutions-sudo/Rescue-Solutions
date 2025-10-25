@@ -86,7 +86,6 @@ const Header = () => {
             
             
             
-            
             {/* Contact Us Button (Order 2 on Mobile - Visible on mobile header) */}
             <a href="/#contact" className="button contact-button" onClick={handleNavClick}>Contact Us</a>
             

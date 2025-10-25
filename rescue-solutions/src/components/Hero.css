@@ -20,7 +20,7 @@
 }
 
 /* ------------------------------------ */
-/* Animated State (Triggered by JS)   */
+/* Animated State (Triggered by JS)   */
 /* ------------------------------------ */
 .animated .animate {
     animation: fadeInUp 0.8s ease-out forwards;
@@ -50,7 +50,6 @@
 .hero-content h1 {
     font-size: 3.5rem;
     margin: 20px 0;
-    margin-top: 0px;
 }
 
 .hero-content .subtitle {
@@ -60,7 +59,6 @@
 
 .hero-content p {
     color: #777;
-    font-size: 1.1rem;
 }
 
 .hero-image-container {
@@ -69,35 +67,40 @@
     justify-content: flex-end;
 }
 
-/* FIX: Remove padding added by global .card class to make the image fill the container */
+
+
+.hero-image {
+    width: 130%;
+    border-radius: 10px;
+}
+/* FIX: Remove padding and adjust image to fill card */
 .hero-image-card {
-    padding: 0; /* REMOVED PADDING */
-    margin-top: 0; /* Ensure no extra space at the top */
+    padding: 0; 
+    margin-top: 0; 
+    background-color: transparent; /* Explicitly remove white background */
+    border: none; /* Ensure no border from global .card */
+    box-shadow: none; /* Ensure no shadow from global .card */
 }
 
 .hero-image {
-    /* Set to 100% to fill the now-padding-less container */
-    width: 170%; 
+    width: 190%; 
     border-radius: 10px;
-    display: block; /* Ensures no extra space below the image */
+    display: block; 
+    margin-right: 100px;
 }
-
-
 /* ----------------- */
 /* Hero Media Queries */
 /* ----------------- */
 @media (max-width: 1024px) {
     .hero-section {
         flex-direction: column;
+        text-align: center;
         align-items: center;
     }
     
     .hero-content {
-        order: 2; 
-        text-align: left; 
-        padding: 0 5%; 
-        width: 100%;
-        max-width: 600px;
+        order: 2; /* Puts text below the image on tablets */
+        text-align: left;
     }
     
     .hero-content h1 {
@@ -109,7 +112,7 @@
     }
     
     .hero-image-container {
-        order: 1; 
+        order: 1; /* Puts image at the top */
         justify-content: center;
     }
 }
@@ -117,33 +120,31 @@
 @media (max-width: 768px) {
     .hero-section {
         flex-direction: column;
-        text-align: left; 
-        padding: 40px 5%; 
+        text-align: center;
+        padding: 40px 5%; /* Adjusted padding for mobile */
     }
     
     .hero-content {
-        order: 1; 
+        order: 1; /* Puts the text before the image on mobile */
         flex: none;
-        width: 100%;
-        padding: 0; 
     }
     
     .hero-image-container {
         order: 2;
-        width: 100%; 
-        margin-top: 20px; 
+        width: 100%; /* Makes the image full width on mobile */
+        margin-top: 20px; /* Add spacing below the text */
     }
 
     .hero-image {
-        width: 100%; 
+        width: 100%; /* Image fits container */
     }
 }
 /* ... existing styles ... */
 @media (max-width: 412px) {
     .hero-content h1 {
-        font-size: 2.2rem; 
+        font-size: 2.2rem; /* Adjusted Hero H1 for mobile */
     }
     .hero-content .subtitle {
-        font-size: 1.1rem; 
+        font-size: 1.1rem; /* Adjusted subtitle size */
     }
 }

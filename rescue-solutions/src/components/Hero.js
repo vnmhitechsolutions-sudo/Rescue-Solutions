@@ -29,9 +29,8 @@ const Hero = () => {
 
         // Cleanup function
         return () => {
-            const currentRef = heroRef.current;
-            if (currentRef) {
-                observer.unobserve(currentRef);
+            if (heroRef.current) {
+                observer.unobserve(heroRef.current);
             }
         };
     }, []); // Empty dependency array means this runs once on mount
@@ -39,15 +38,13 @@ const Hero = () => {
     return (
         // 4. Attach the ref to the section
         <section id="home" className="hero-section section-container" ref={heroRef}>
-                
             <div className="hero-content">
-                {/* --- COMPANY NAME HEADING (Made bigger for prominence) --- */}
-                {/* Note: Removed class 'animate' from the company name heading as it contains complex inline styles 
-                   and needs to be present early for consistent layout. */}
+                {/* Add a new class 'animate' to the elements you want to animate */}
                 <h1  style={{ 
-                    fontSize: '2 rem', 
+                    fontSize: '1.8 rem', 
                     fontWeight: 'bold', 
-                    marginBottom: '10px' 
+                    marginBottom: '10px', 
+                    marginRight:'20px',
                 }}>
                     <span style={{ color: '#270d88ff' }}>VNM</span>
                     <span style={{ color: '#3e4343ff', fontWeight: 'normal', margin: '0 5px' }}>Hitech</span>
