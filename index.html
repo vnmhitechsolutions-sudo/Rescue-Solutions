@@ -1,108 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rescue Solutions - Professional IT Training and Development Services">
-    <meta name="keywords" content="IT training, software development, courses, programming, technology">
-    <meta name="author" content="Rescue Solutions">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Rescue Solutions - IT Training & Development">
-    <meta property="og:description" content="Professional IT training and development services">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://your-domain.com">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Rescue Solutions - IT Training & Development">
-    <meta name="twitter:description" content="Professional IT training and development services">
-    
-    <title>Rescue Solutions - IT Training & Development</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/rescue-solutions/public/favicon.ico">
-    <link rel="apple-touch-icon" sizes="192x192" href="/rescue-solutions/public/logo192.png">
-    <link rel="apple-touch-icon" sizes="512x512" href="/rescue-solutions/public/logo512.png">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="/rescue-solutions/public/images/headlogo.png" as="image">
-    
-    <!-- CSS Reset and Base Styles -->
-    <style>
-        :root {
-            /* Branding Colors - Update these to match VNM HiTech's colors */
-            --primary-color: #007bff; /* A standard tech blue */
-            --secondary-color: #0056b3; /* Darker blue/Navy */
-            --text-color: #333;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-                sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            line-height: 1.6;
-            color: var(--text-color);
-        }
-        /* --- Loading Styles --- */
-        .loading-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Using VNM HiTech's implied "HiTech" gradient */
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            z-index: 9999;
-            transition: opacity 0.3s ease-out;
-        }
-        .loading-spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top: 4px solid white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .loading-text {
-            margin-top: 15px;
-            font-size: 20px;
-            font-weight: 600;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ SEO Meta Tags -->
+  <title>VNM Hitech Solutions - Software Development & IT Services</title>
+  <meta name="description" content="VNM Hitech Solutions is a leading IT company in Karur specializing in software development, web design, mobile app solutions, and IT services. Transforming Ideas. Delivering Excellence." />
+  <meta name="keywords" content="VNM Hitech Solutions, IT company in Karur, software company Karur, web development Karur, app development Karur, software development company Karur, IT solutions Karur, Karur technology company" />
+  <meta name="author" content="VNM Hitech Solutions" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Open Graph Meta Tags (for social media sharing) -->
+  <meta property="og:title" content="VNM Hitech Solutions - Software Development & IT Services" />
+  <meta property="og:description" content="Transforming Ideas. Delivering Excellence. VNM Hitech Solutions provides IT and software development services in Karur." />
+  <meta property="og:image" content="https://vnmhitechsolutions.com/logo512.png" />
+  <meta property="og:url" content="https://vnmhitechsolutions.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- ✅ Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="VNM Hitech Solutions - Software Development & IT Services" />
+  <meta name="twitter:description" content="Transforming Ideas. Delivering Excellence. VNM Hitech Solutions is a top IT company in Karur providing software and web solutions." />
+  <meta name="twitter:image" content="https://vnmhitechsolutions.com/android-chrome-512x512" />
+
+  <!-- ✅ Favicon and Icons -->
+  <link rel="icon" type="image/png" href="/rescue-solutions/public/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="192x192" href="/rescue-solutions/public/android-chrome-192x192.png" />
+  <link rel="apple-touch-icon" sizes="512x512" href="/rescue-solutions/public/android-chrome-512x512.png" />
+
+  <!-- ✅ Preload critical resources -->
+  <link rel="preload" href="/rescue-solutions/public/images/headlogo.png" as="image" />
+
+  <!-- ✅ Structured Data (helps Google understand your business) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "VNM Hitech Solutions",
+    "url": "https://vnmhitechsolutions.com",
+    "logo": "https://vnmhitechsolutions.com/logo512.png",
+    "description": "VNM Hitech Solutions is a software development and IT services company based in Karur. We provide web, mobile app, and digital transformation solutions.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Karur",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "India"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/vnmhitechsolutions",
+      "https://www.instagram.com/vnmhitechsolutions"
+    ]
+  }
+  </script>
+
+  <!-- ✅ Branding Colors & Styles -->
+  <style>
+    :root {
+      --primary-color: #007bff; /* Tech Blue */
+      --secondary-color: #0056b3; /* Deep Blue */
+      --text-color: #333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+      color: var(--text-color);
+    }
+
+    /* Loading Screen */
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      z-index: 9999;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .loading-spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+      margin-top: 15px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  </style>
 </head>
+
 <body>
-    <div id="root">
-        <div class="loading-container" id="app-loader">
-            <div>
-                <div class="loading-spinner"></div>
-                <div class="loading-text">Loading VNM HiTech Solutions...</div>
-            </div>
-        </div>
+  <div id="root">
+    <div class="loading-container" id="app-loader">
+      <div>
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading VNM Hitech Solutions...</div>
+      </div>
     </div>
+  </div>
 
-    <noscript>
-        <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif; background-color: #f4f4f4;">
-            <h1 style="color: var(--primary-color);">VNM HiTech Solutions</h1>
-            <p style="margin-top: 15px;">**JavaScript is required to run this application.** Please enable JavaScript in your browser settings.</p>
-            <p style="margin-top: 10px;">If you are seeing this, the app failed to load or JavaScript is disabled. Please contact support.</p>
-        </div>
-    </noscript>
-
-    </body>
+  <noscript>
+    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif; background-color: #f4f4f4;">
+      <h1 style="color: var(--primary-color);">VNM Hitech Solutions</h1>
+      <p style="margin-top: 15px;">JavaScript is required to run this application. Please enable JavaScript in your browser settings.</p>
+      <p style="margin-top: 10px;">If you are seeing this, the app failed to load or JavaScript is disabled. Please contact support.</p>
+    </div>
+  </noscript>
+</body>
 </html>
