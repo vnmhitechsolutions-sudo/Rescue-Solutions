@@ -81,7 +81,7 @@ const Header = () => {
         <header className="header">
             {/* Logo Link (Order 1 on Mobile) */}
             <a href="/" className="logo" onClick={handleHomeClick}>
-                <img src={logo} alt="VNM Hitech Solutions Logo" className="logo-img" />
+                <img src={logo} alt="VNM Hitech Solutions" className="logo-img" />
             </a>
             
             

@@ -148,7 +148,7 @@ const Contact = () => {
                     {/* The image element with the ref for scroll-triggering */}
                     <img 
                         src="../images/vnm full logo 1.png" 
-                        alt="VNM Hitech Solutions Logo" 
+                        alt="VNM Hitech Solutions" 
                         className={`contact-image ${isLogoVisible ? 'is-visible' : ''}`}
                         ref={logoRef}
                     />
