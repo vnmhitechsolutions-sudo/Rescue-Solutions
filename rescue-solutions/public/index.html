@@ -1,17 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
-    <!-- 1. CHANGE THIS LINE -->
-    <link rel="icon" href="./images/circlelogo.png" /> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- 2. CHANGE THIS LINE -->
-    <title>VNM Hitech Solutions</title> 
-    <!-- Optional: Also change the manifest icons if you want different sizes -->
-    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png" style="width: auto;"/> 
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>VNM Hitech Solutions - Software Development & IT Services</title>
+
+    <meta name="description" content="VNM Hitech Solutions is a leading IT company in Karur specializing in software development, web design, mobile app solutions, and IT services. Transforming Ideas. Delivering Excellence." />
+    <meta name="keywords" content="VNM Hitech Solutions, IT company in Karur, software company Karur, web development Karur, app development Karur, software development company Karur, IT solutions Karur, Karur technology company" />
+    <meta name="author" content="VNM Hitech Solutions" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:title" content="VNM Hitech Solutions - Software Development & IT Services" />
+    <meta property="og:description" content="Transforming Ideas. Delivering Excellence. VNM Hitech Solutions provides IT and software development services in Karur." />
+    <meta property="og:image" content="https://vnmhitechsolutions.com/logo512.png" />
+    <meta property="og:url" content="https://vnmhitechsolutions.com" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VNM Hitech Solutions - Software Development & IT Services" />
+    <meta name="twitter:description" content="Transforming Ideas. Delivering Excellence. VNM Hitech Solutions is a top IT company in Karur providing software and web solutions." />
+    <meta name="twitter:image" content="https://vnmhitechsolutions.com/android-chrome-512x512" />
+
+    <link rel="icon" type="image/png" href="./favicon.ico" />
+    <link rel="apple-touch-icon" sizes="192x192" href="./android-chrome-192x192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="./android-chrome-512x512.png" />
+
+    <link rel="preload" href="./images/headlogo.png" as="image" />
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "VNM Hitech Solutions",
+            "url": "https://vnmhitechsolutions.com",
+            "logo": "https://vnmhitechsolutions.com/logo512.png",
+            "description": "VNM Hitech Solutions is a software development and IT services company based in Karur. We provide web, mobile app, and digital transformation solutions.",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Karur",
+                "addressRegion": "Tamil Nadu",
+                "addressCountry": "India"
+            },
+            "sameAs": [
+                "https://www.linkedin.com/company/vnmhitechsolutions",
+                "https://www.instagram.com/vnmhitechsolutions"
+            ]
+        }
+    </script>
+
+    <style>
+        :root {
+            --primary-color: #007bff; /* Tech Blue */
+            --secondary-color: #0056b3; /* Deep Blue */
+            --text-color: #333;
+        }
+
+        /* Essential Reset and Font Setup */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Loading Screen styles */
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            z-index: 9999;
+            transition: opacity 0.3s ease-out;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div class="loading-container" id="app-loader">
+            <div>
+                <div class="loading-spinner"></div>
+                <div class="loading-text">Loading VNM Hitech Solutions...</div>
+            </div>
+        </div>
+    </div>
+
+    <noscript>
+        <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif; background-color: #f4f4f4;">
+            <h1 style="color: #007bff;">VNM Hitech Solutions</h1>
+            <p style="margin-top: 15px;">JavaScript is required to run this application. Please enable JavaScript in your browser settings.</p>
+            <p style="margin-top: 10px;">If you are seeing this, the app failed to load or JavaScript is disabled. Please contact support.</p>
+        </div>
+    </noscript>
+</body>
 </html>
