@@ -138,11 +138,12 @@ const Contact = () => {
                             <p>Drop us a line anytime</p>
                         </div>
                     </div>
+
                     
                     <h3 style={{ marginTop: '30px' }}>Visit our office</h3>
                     <div className="info-item">
                         <span className="icon-wrapper"><MapPin size={20} color="#6a00ff" /></span>
-                        <p>80 Feet Rd, VA Plaza 1st Floor, Sengunthapuram, Karur, Tamil Nadu 639002</p>
+                        <p>19/2 VA Plaza, 80 Feet road, Sengunthapuram, Karur, Tamil Nadu 639002</p>
                     </div>
 
                     {/* The image element with the ref for scroll-triggering */}

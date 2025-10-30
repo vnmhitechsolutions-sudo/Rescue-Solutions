@@ -1,15 +1,14 @@
 /* ---------------------------------- */
-/* 1. BASE STYLES & LAYOUT            */
+/* 1. BASE STYLES & LAYOUT          */
 /* ---------------------------------- */
 .footer {
     background-color: #1e1e3f;
     color: #ccc;
-    padding: 00px 0; /* Reduced padding for compact footer */
+    padding: 20px 0 0; /* Increased top padding for better desktop height */
 }
 
 .footer-content {
     display: flex;
-    /* Use baseline to align the first line of text/heading */
     align-items: flex-start;
     justify-content: space-between;
     gap: 30px;
@@ -19,12 +18,11 @@
 .footer-col {
     display: flex;
     flex-direction: column;
-    /* By default, columns are equal, but we override this below */
 }
 
 /* Explicitly give the Brand column (first column) more width */
 .footer-col.brand-col {
-    flex-basis: 40%; /* Give 40% of the space to the brand column */
+    flex-basis: 40%;
 }
 
 /* Give Contact and Legal columns less space (about 30% each) */
@@ -33,34 +31,36 @@
 }
 
 .footer-col .logo {
-    /* Reduced font size for single-line text */
-    font-size: 1.3rem; 
+    font-size: 1.5rem; 
     font-weight: 700;
     color: #6a00ff;
-    margin-top: 25px;
+    /* Adjusted desktop margin-top for alignment */
+    margin-top: 38px; 
+    margin-bottom: 5px;
 }
 
 .footer-col h4 {
     color: white;
     font-size: 1.1rem;
-    margin-top: 30px;
-
+    margin-top: 45px; 
 }
 
 .footer-col p {
     color: #ccc;
     font-size: 0.9rem;
-    margin-top: 20px;
+    /* Added margin-top for desktop spacing */
+    margin-top: 0px; 
 }
 
 .footer-col ul {
     list-style: none;
     padding: 0;
-    margin-top: -5px;
+    margin-top: 10px; 
+    row-gap: initial;
 }
 
 .footer-col li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .footer-col a {
@@ -84,7 +84,7 @@
     padding: 8px;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    color: white; 
+    color: rgb(107, 13, 77); 
 }
 
 .social-icons a:hover {
@@ -92,23 +92,30 @@
     transform: translateY(-2px);
 }
 
+/* Target the SVG icon color on hover (white/grey) */
+.social-icons a:hover svg {
+    color: #ccc !important; 
+    stroke: #ccc !important;
+}
+
+
 /* Footer Bottom */
 .footer-bottom {
-    border-top: 1px solid #333;
+    border-top: 2px solid #333; 
     text-align: center;
-    padding-bottom: 5px;
-    margin-bottom: 40px;
+    padding-bottom: 15px; 
+    margin-bottom: 0;
 }
 
 .footer-bottom p {
     font-size: 0.8rem;
     color: #999;
-    margin-top: 10px;
+    margin-top: 20px; 
 }
 
 
 /* ---------------------------------- */
-/* MOBILE MEDIA QUERIES               */
+/* MOBILE MEDIA QUERIES (FIXED STACKING ORDER) */
 /* ---------------------------------- */
 @media (max-width: 768px) {
     .footer-content {
@@ -121,11 +128,37 @@
         align-items: center;
         max-width: 100%;
         text-align: center;
-        /* Reset flex-basis for mobile to ensure full width */
         flex-basis: auto; 
     }
+    
+    /* Ensure the brand column is fully centered on mobile */
+    .footer-col.brand-col {
+        align-items: center;
+        /* Force vertical stacking to respect the HTML order */
+        flex-direction: column;
+    }
+    
+    /* 🌟 CRITICAL FIX: Ensure the desired stacking order using 'order' 🌟 */
+    /* This overrides any hidden or default flex order settings */
+    .footer-col.brand-col .logo {
+        order: 1; /* Logo/Title first */
+        margin-top: 10px; /* Reduce top margin on mobile */
+    }
+    .footer-col.brand-col p {
+        order: 2; /* Paragraph second */
+        margin-top: 10px; /* Ensure spacing between logo and paragraph */
+    }
+    .footer-col.brand-col .social-icons {
+        order: 3; /* Social Icons third */
+    }
+
 
     .footer-col ul {
+        text-align: center;
+    }
+    
+    /* Ensure text alignment is centered on mobile for better layout */
+    .footer-col p {
         text-align: center;
     }
 }

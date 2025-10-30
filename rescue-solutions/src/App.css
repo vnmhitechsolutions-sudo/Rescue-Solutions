@@ -302,6 +302,8 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 500;
+    /* Ensure the tag is an inline-block or block element to accept margins */
+    display: inline-block; 
 }
 
 html, body, #root {
@@ -316,7 +318,7 @@ html, body, #root {
 }
 
 
-/* --- GLOBAL ANIMATIONS (Needed for Modal and others) --- */
+/* --- GLOBAL ANIMATIONS (from app.css) --- */
 @keyframes zoomIn {
     from {
         opacity: 0;
@@ -347,7 +349,7 @@ html, body, #root {
 }
 
 
-/* --- Mobile Font Sizes --- */
+/* --- Mobile Font Sizes and Gap Fixes --- */
 @media (max-width: 768px) {
     .section-container {
         padding: 40px 5%; 
@@ -363,5 +365,29 @@ html, body, #root {
 
     .legal-content p, .legal-content li {
         font-size: 0.9rem;
+    }
+    
+    /* 🌟 FIX: Increase space below the 'Contact Us' tag only on mobile 🌟 */
+    .tag {
+        margin-bottom: 15px; 
+    }
+}
+
+@media (max-width: 412px) {
+    .section-container {
+        padding: 30px 5%;
+        font-size: 0.9rem; 
+    }
+    .section-container h2 {
+        font-size: 1.6rem; 
+    }
+    .legal-content p, .legal-content li {
+        font-size: 0.9rem; 
+    }
+    .legal-content h2 {
+        font-size: 1.2rem; 
+    }
+    .text-primary {
+        font-size: 1.6rem; 
     }
 }

@@ -1,3 +1,8 @@
+/* Define a CSS variable for the header height (approximate) */
+:root {
+    --header-height: 60px; 
+}
+
 /* --- Keyframe Animation Definitions --- */
 @keyframes fadeInUp {
     from {
@@ -10,14 +15,32 @@
     }
 }
 
+/* NEW: Animation for Hitech Solutions sliding in */
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px); /* Start slightly to the right */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 /* ----------------------------------- */
 /* Initial State of Elements (Hidden) */
 /* ----------------------------------- */
 .animate {
-    opacity: 0; /* Elements are invisible by default */
-    transform: translateY(20px); /* Positioned slightly below their final spot */
-    transition: none; /* Prevents the animation from playing on load */
+    opacity: 0; 
+    transform: translateY(20px); /* Default fade-up position */
+    transition: none; 
 }
+
+/* Initial state for the Hitech Solution slide-in effect */
+.hitech-solution-text.animate {
+    transform: translateX(20px); /* Start slightly right for the slide */
+}
+
 
 /* ------------------------------------ */
 /* Animated State (Triggered by JS)   */
@@ -26,39 +49,78 @@
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
+/* Specific animation for Hitech Solutions text */
+.animated .hitech-solution-text.animate {
+    animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+
 /* Apply staggered delays to elements */
-.animated .delay-1 { animation-delay: 0.2s; }
-.animated .delay-2 { animation-delay: 0.4s; }
-.animated .delay-3 { animation-delay: 0.6s; }
-.animated .delay-4 { animation-delay: 0.8s; }
-.animated .delay-5 { animation-delay: 1s; }
+.animated .delay-0 { animation-delay: 0s; } /* VNM */
+.animated .delay-0-5 { animation-delay: 0.3s; } /* Hitech Solutions */
+.animated .delay-1 { animation-delay: 0.6s; } /* Transforming Ideas */
+.animated .delay-2 { animation-delay: 0.8s; }
+.animated .delay-3 { animation-delay: 1s; }
+.animated .delay-4 { animation-delay: 1.2s; }
+.animated .delay-5 { animation-delay: 1.4s; }
+
 
 /* ----------------- */
-/* Hero Section Styles */
+/* Hero Section Styles (Desktop Layout Restored) */
 /* ----------------- */
 .hero-section {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
     gap: 50px;
+    
+    min-height: 85vh; 
+    padding-top: 50px; 
+    padding-bottom: 50px;
+    text-align: left; 
 }
 
 .hero-content {
     flex: 1;
+    text-align: left;
 }
 
+/* Style for the VNM Hitech Solutions text */
+.hero-content h1:first-child { 
+    font-size: 3.0rem; /* Desktop size retained */
+    font-weight: bold; 
+    margin-bottom: 10px; 
+    
+    /* Ensure flex context for spans inside to align properly */
+    display: flex; 
+    align-items: baseline; 
+    flex-wrap: nowrap; /* Prevent wrapping on desktop */
+}
+
+/* Reset margin for the spans inside the first h1 */
+.hero-content h1:first-child span {
+    margin: 0;
+}
+.hitech-solution-text {
+    margin: 0 5px; /* Apply margin specifically here for desktop spacing */
+}
+
+
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 3.5rem; 
     margin: 20px 0;
+    word-break: normal; /* Normal word break on desktop */
 }
 
 .hero-content .subtitle {
-    font-size: 1.5rem;
-    color: #555;
+    font-size: 1.5rem; 
+    color: #000000;
 }
 
-.hero-content p {
-    color: #777;
+
+.hero-content p:last-of-type {
+    color: #494747;
+    margin-bottom: 30px; 
 }
 
 .hero-image-container {
@@ -67,52 +129,38 @@
     justify-content: flex-end;
 }
 
-
-
-.hero-image {
-    width: 130%;
-    border-radius: 10px;
-}
-/* FIX: Remove padding and adjust image to fill card */
 .hero-image-card {
     padding: 0; 
     margin-top: 0; 
-    background-color: transparent; /* Explicitly remove white background */
-    border: none; /* Ensure no border from global .card */
-    box-shadow: none; /* Ensure no shadow from global .card */
+    background-color: transparent; 
+    border: none; 
+    box-shadow: none; 
 }
 
 .hero-image {
-    width: 190%; 
+    width: 140%; 
     border-radius: 10px;
     display: block; 
-    margin-right: 100px;
+    margin-right: 100px; 
 }
-/* ----------------- */
-/* Hero Media Queries */
-/* ----------------- */
+
+/* ----------------------------------- */
+/* Hero Media Queries (Mobile View Fixes Retained) */
+/* ----------------------------------- */
 @media (max-width: 1024px) {
     .hero-section {
         flex-direction: column;
-        text-align: center;
         align-items: center;
+        min-height: unset; 
     }
     
     .hero-content {
-        order: 2; /* Puts text below the image on tablets */
-        text-align: left;
+        order: 2;
+        text-align: left; 
     }
-    
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-content .subtitle {
-        font-size: 1.2rem;
-    }
-    
+
     .hero-image-container {
-        order: 1; /* Puts image at the top */
+        order: 1; 
         justify-content: center;
     }
 }
@@ -120,31 +168,56 @@
 @media (max-width: 768px) {
     .hero-section {
         flex-direction: column;
-        text-align: center;
-        padding: 40px 5%; /* Adjusted padding for mobile */
+        /* FIX: Add calculated padding-top to clear the fixed header */
+        padding: calc(var(--header-height) + 20px) 5% 40px 5%; 
+        text-align: left; 
     }
     
     .hero-content {
-        order: 1; /* Puts the text before the image on mobile */
+        order: 1; 
         flex: none;
+        width: 100%; 
+        text-align: left;
     }
     
+    /* FIX: Reduce font size for "VNM Hitech Solutions" on smaller mobile screens */
+    .hero-content h1:first-child { 
+        font-size: 2.0rem; 
+        flex-wrap: wrap; 
+        line-height: 1.2; 
+        margin-bottom: 10px;
+    }
+
+    /* Adjust margins for spans within the first h1 on mobile */
+    .hero-content h1:first-child span {
+        margin: 0 3px; 
+    }
+
+    .hero-content h1 {
+        margin: 10px 0;
+    }
+
     .hero-image-container {
         order: 2;
-        width: 100%; /* Makes the image full width on mobile */
-        margin-top: 20px; /* Add spacing below the text */
+        width: 100%;
+        margin-top: 20px;
     }
 
     .hero-image {
-        width: 100%; /* Image fits container */
+        width: 100%;
+        margin-right: 0; 
     }
 }
-/* ... existing styles ... */
+
 @media (max-width: 412px) {
+    .hero-content h1:first-child { 
+        font-size: 2.1rem; 
+        margin-bottom: 30px;
+    }
     .hero-content h1 {
-        font-size: 2.2rem; /* Adjusted Hero H1 for mobile */
+        font-size: 2.0rem;
     }
     .hero-content .subtitle {
-        font-size: 1.1rem; /* Adjusted subtitle size */
+        font-size: 1.2rem;
     }
 }

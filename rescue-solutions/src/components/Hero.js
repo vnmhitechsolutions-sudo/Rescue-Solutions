@@ -2,23 +2,20 @@ import React, { useEffect, useRef } from 'react';
 import './Hero.css';
 
 const Hero = () => {
-    // 1. Create a ref to attach to the hero section
     const heroRef = useRef(null);
 
-    // 2. Use a useEffect hook to set up the IntersectionObserver
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        // 3. Add 'animated' class to trigger animations
                         entry.target.classList.add('animated');
-                        observer.unobserve(entry.target); // Stop observing after animation
+                        observer.unobserve(entry.target); 
                     }
                 });
             },
             {
-                threshold: 0.5, // Trigger when 50% of the element is visible
+                threshold: 0.5, 
                 rootMargin: '0px'
             }
         );
@@ -27,30 +24,25 @@ const Hero = () => {
             observer.observe(heroRef.current);
         }
 
-        // Cleanup function
         return () => {
             if (heroRef.current) {
                 observer.unobserve(heroRef.current);
             }
         };
-    }, []); // Empty dependency array means this runs once on mount
+    }, []);
 
     return (
-        // 4. Attach the ref to the section
         <section id="home" className="hero-section section-container" ref={heroRef}>
             <div className="hero-content">
-                {/* Add a new class 'animate' to the elements you want to animate */}
-                <h1  style={{ 
-                    fontSize: '1.8 rem', 
-                    fontWeight: 'bold', 
-                    marginBottom: '10px', 
-                    marginRight:'20px',
-                }}>
-                    <span style={{ color: '#270d88ff' }}>VNM</span>
-                    <span style={{ color: '#3e4343ff', fontWeight: 'normal', margin: '0 5px' }}>Hitech</span>
-                    <span style={{ color: '#33bcceff', fontWeight: 'normal' }}>Solutions</span>
+                {/* MODIFIED: Staggered animation structure for VNM Hitech Solutions */}
+                <h1 className="company-logo-text">
+                    <span className="animate delay-0" style={{ color: '#270d88ff' }}>VNM</span>
+                    <span className="hitech-solution-text animate delay-0-5" style={{ color: '#3e4343ff', fontWeight: 'normal', margin: '0 5px' }}>Hitech</span>
+                    <span className="hitech-solution-text animate delay-0-5" style={{ color: '#33bcceff', fontWeight: 'normal' }}>Solutions</span>
                 </h1>
-                <h1 className="animate delay-1">Transforming Ideas.<br /><span className="text-primary">Delivering Excellence.</span></h1>
+                
+                <h1 className="animate delay-1">Transforming Ideas.
+                <br /><h1 className="text-primary">Delivering Excellence.</h1></h1>
                 <p className="subtitle animate delay-2">Where innovation meets execution.</p>
                 <p className="animate delay-3">Empowering businesses with cutting-edge technology solutions. We specialize in creating innovative job portals and digital transformation services.</p>
                 <a href="#contact" className="button animate delay-4">Get Started →</a>

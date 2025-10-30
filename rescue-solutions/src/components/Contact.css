@@ -44,6 +44,11 @@
     margin-bottom: 20px;
 }
 
+/* Add space below the main H2 */
+.contact-section h2 {
+    margin-bottom: 25px; 
+}
+
 .contact-content {
     display: flex;
     gap: 30px;
@@ -57,6 +62,14 @@
 
 .contact-form-card h3 {
     margin-top: 0;
+}
+
+/* Targets the paragraph containing the email link */
+.contact-form-card p:nth-of-type(1) { 
+    white-space: nowrap; /* Desktop: Keep link on one line */
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    margin-bottom: 20px; /* Space above form fields */
 }
 
 .contact-form-card a {
@@ -150,28 +163,50 @@ textarea {
 }
 
 @media (max-width: 768px) {
+    /* Mobile Reset for wrapping the paragraph */
+    .contact-form-card p:nth-of-type(1) {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        margin-bottom: 20px; 
+    }
+    
+    /* 🌟 AGGRESSIVE FIX: Force the email link to the next line 🌟 */
+    .contact-form-card p:nth-of-type(1) a {
+        /* Treat the link as a block element */
+        display: block; 
+        /* Ensure the block element breaks the line after "via" */
+        margin-top: 5px; 
+        
+        /* Ensure the long email address can itself break (as backup) */
+        word-break: break-all;
+        overflow-wrap: break-word; 
+    }
+    
     .contact-content {
         gap: 20px;
     }
     .contact-form-card, .contact-info-card {
-        padding: 20px; /* Smaller padding on mobile */
+        padding: 20px; 
     }
     .form-group {
-        flex-direction: column; /* Stack form inputs vertically */
+        flex-direction: column; 
         gap: 15px;
+    }
+
+    .contact-section h2 {
+        margin-bottom: 20px; 
+    }
+
+    .contact-section h2 {
+        font-size: 1.8rem; 
+    }
+    .contact-subtitle {
+        font-size: 0.9rem; 
     }
 }
 @media (max-width: 412px) {
     .contact-section h2, .contact-section .tag, .contact-section .contact-subtitle {
         text-align: left;
-    }
-}
-/* ... existing styles ... */
-@media (max-width: 768px) {
-    .contact-section h2 {
-        font-size: 1.8rem; /* Adjusted Contact H2 for mobile */
-    }
-    .contact-subtitle {
-        font-size: 0.9rem; /* Adjusted subtitle size */
     }
 }

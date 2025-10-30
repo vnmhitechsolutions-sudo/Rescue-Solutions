@@ -20,6 +20,7 @@
     text-decoration:#6a00ff;
     display:flex;
     align-items: flex-end;
+  
 }
 
 .logo-img {
@@ -30,7 +31,7 @@
 /* Hide the Contact Button and Hamburger on Desktop */
 .contact-button{
     display: none;
-    margin-left: 80px;
+    margin-left: 130px;
 }
 .contact-button:hover {
     background-color: #f7f7f7;
@@ -78,6 +79,7 @@
     .logo {
         order: 1;
         margin: 0;
+        
     }
     .logo-img {
         height: 35px;
