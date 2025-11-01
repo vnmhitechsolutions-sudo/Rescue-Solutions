@@ -24,11 +24,6 @@
 .about-content p {
     color: #777;
 }
-
-.what-we-believe{
-    /* Ensures h4 is separated from the paragraph above */
-}
-
 .what-we-believe h4 {
     margin-top: 25px; 
     margin-bottom: 15px; 
