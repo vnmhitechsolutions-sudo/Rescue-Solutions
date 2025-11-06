@@ -32,6 +32,7 @@ const Hero = () => {
     }, []);
 
     return (
+        <div id="homeback">
         <section id="home" className="hero-section section-container" ref={heroRef}>
             <div className="hero-content">
                 {/* MODIFIED: Staggered animation structure for VNM Hitech Solutions */}
@@ -53,6 +54,7 @@ const Hero = () => {
                 </div>
             </div>
         </section>
+        </div>
     );
 };
 
