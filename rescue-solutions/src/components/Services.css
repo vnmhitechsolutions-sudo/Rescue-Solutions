@@ -56,9 +56,9 @@
     white-space: nowrap;
 }
 
-/* ---------------------------------- */
+
 /* MOBILE LAYOUT & CAROUSEL STYLES    */
-/* ---------------------------------- */
+
 
 /* Container for both rows on mobile (used by Services.js) */
 .services-mobile-container {
@@ -144,9 +144,9 @@
     right: 0;
 }
 
-/* ------------------------------------------------------------- */
+/* - */
 /* ARROW LOGIC BASED ON CAROUSEL STATE (Classes added by JS)     */
-/* ------------------------------------------------------------- */
+/* - */
 
 /* 1. Hide Left Arrow at Start Position */
 .carousel-row-wrapper.at-start .carousel-nav-button.prev {
@@ -224,9 +224,9 @@
     justify-content: flex-start; /* Align list items to the left */
 }
 
-/* ----------------- */
+/* -- */
 /* Media Queries (Logic to toggle layouts based on screen width) */
-/* ----------------- */
+/* -- */
 @media (max-width: 1024px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr); 

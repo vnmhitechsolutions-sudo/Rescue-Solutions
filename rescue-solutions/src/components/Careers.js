@@ -44,7 +44,7 @@ const initialFormData = {
     resumeLink: '' // Changed from 'file' to 'resumeLink'
 };
 
-// --- EMAIL.JS CONFIGURATION ---
+//  EMAIL.JS CONFIGURATION 
 const SERVICE_ID = 'service_m8x1y1a'; // <<< REPLACE with your Service ID
 const TEMPLATE_ID = 'template_174u98b'; // <<< REPLACE with your Template ID 
 const PUBLIC_KEY = 'iAhlWmxHOW4zR-QbW'; // <<< REPLACE with your Public Key
@@ -142,7 +142,7 @@ const Careers = () => {
     };
 
 
-    // --- RENDERING ---
+    //  RENDERING 
 
     const renderJobCard = (job) => (
         <div key={job.id} className="job-card card">

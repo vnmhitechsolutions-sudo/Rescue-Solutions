@@ -3,7 +3,7 @@
     --header-height: 60px; 
 }
 
-/* --- Keyframe Animation Definitions --- */
+/*  Keyframe Animation Definitions  */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -27,9 +27,9 @@
     }
 }
 
-/* ----------------------------------- */
+/* -- */
 /* Initial State of Elements (Hidden) */
-/* ----------------------------------- */
+/* -- */
 .animate {
     opacity: 0; 
     transform: translateY(20px); /* Default fade-up position */
@@ -42,9 +42,9 @@
 }
 
 
-/* ------------------------------------ */
+/*  */
 /* Animated State (Triggered by JS)   */
-/* ------------------------------------ */
+/*  */
 .animated .animate {
     animation: fadeInUp 0.8s ease-out forwards;
 }
@@ -65,9 +65,9 @@
 .animated .delay-5 { animation-delay: 1.4s; }
 
 
-/* ----------------- */
+/* -- */
 /* Hero Section Styles (Desktop Layout Restored) */
-/* ----------------- */
+/* -- */
 
 .hero-section {
     display: flex;
@@ -144,9 +144,9 @@
     margin-right: 100px; 
 }
 
-/* ----------------------------------- */
+/* -- */
 /* Hero Media Queries (Mobile View Fixes Retained) */
-/* ----------------------------------- */
+/* -- */
 @media (max-width: 1024px) {
     .hero-section {
         flex-direction: column;
@@ -169,8 +169,9 @@
     .hero-section {
         flex-direction: column;
         /* FIX: Add calculated padding-top to clear the fixed header */
-        padding: calc(var(--header-height) + 20px) 5% 40px 5%; 
+        padding: calc(var(--header-height) ) 5% 40px 5%; 
         text-align: left; 
+     
     }
     
     .hero-content {
@@ -178,6 +179,7 @@
         flex: none;
         width: 100%; 
         text-align: left;
+        margin-top: -10%;
     }
     
     /* FIX: Reduce font size for "VNM Hitech Solutions" on smaller mobile screens */
@@ -215,7 +217,7 @@
         margin-bottom: 30px;
     }
     .hero-content h1 {
-        font-size: 2.0rem;
+        font-size: 3.0rem;
     }
     .hero-content .subtitle {
         font-size: 1.2rem;

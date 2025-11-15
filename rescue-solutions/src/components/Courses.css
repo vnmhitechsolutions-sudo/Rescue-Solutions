@@ -4,9 +4,9 @@
     min-height: 100vh;
 }
 
-/* ---------------------------------- */
+
 /* 1. Keyframes for Animation         */
-/* ---------------------------------- */
+
 
 /* Keyframe for subtle vertical background pan */
 @keyframes pan-y {
@@ -24,9 +24,9 @@
     }
 }
 
-/* ---------------------------------- */
+
 /* 2. Global & Hero Styles            */
-/* ---------------------------------- */
+
 
 .courses-hero {
     /* Background Image & Overlay */
@@ -77,7 +77,7 @@
     font-size: 1.1rem;
 }
 
-/* --- Section Entrance Animation Base --- */
+/*  Section Entrance Animation Base  */
 .course-listings, .apply-course-section {
     opacity: 0;
     transform: translateY(20px);
@@ -93,7 +93,7 @@
     /* Delay is set via inline style in JS */
 }
 
-/* --- Course Grid and Card Styles --- */
+/*  Course Grid and Card Styles  */
 
 /* ALIGNMENT FIX: Ensures section headings are left-aligned */
 .section-title.align-left {
@@ -192,7 +192,7 @@
 }
 
 
-/* --- Application Form Section --- */
+/*  Application Form Section  */
 .apply-course-section {
     padding-top: 60px;
 }
@@ -319,7 +319,7 @@
 }
 
 
-/* --- Submission Modal Styles (Reused from Careers) --- */
+/*  Submission Modal Styles (Reused from Careers)  */
 .submission-modal-overlay {
     position: fixed;
     top: 0;
@@ -361,7 +361,7 @@
     background-color: #6a00ff;
 }
 
-/* --- Responsive Adjustments --- */
+/*  Responsive Adjustments  */
 
 @media (max-width: 1024px) {
     .courses-grid {

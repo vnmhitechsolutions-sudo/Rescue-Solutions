@@ -40,7 +40,7 @@
 
 .what-we-believe li {
     display: flex;
-    /* 🌟 FIX 2: Align items to the start (top) to line up the checkmark with the first line of text 🌟 */
+    /*  FIX 2: Align items to the start (top) to line up the checkmark with the first line of text  */
     align-items: flex-start; 
     gap: 10px;
     color: #555;
@@ -75,7 +75,7 @@
     border-radius: 15px;
 }
 
-/* --- About Media Queries --- */
+/*  About Media Queries  */
 @media (max-width: 1024px) {
     .about-section {
         flex-direction: column;

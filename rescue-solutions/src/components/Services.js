@@ -94,7 +94,7 @@ const Services = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
     
-    // --- SCROLL POSITION LOGIC ---
+    //  SCROLL POSITION LOGIC 
     const checkScrollPosition = (ref, isStartSetter, isEndSetter, wrapperRef) => {
         if (!ref.current || !wrapperRef.current) return;
 
@@ -169,7 +169,7 @@ const Services = () => {
     }, [isMobile, handleScroll]); // Re-run effect when isMobile or handleScroll changes
     // Removed 'hasSwiped' from dependencies to prevent excessive re-renders/listener re-attachment
 
-    // --- ARROW NAVIGATION LOGIC ---
+    //  ARROW NAVIGATION LOGIC 
     const scrollByCard = (ref, direction) => {
         if (ref.current) {
             // Estimate a single card width based on the CSS: 85% of parent + 20px gap
@@ -200,7 +200,7 @@ const Services = () => {
         const ref = row === 1 ? carouselRef1 : carouselRef2;
         scrollByCard(ref, 'next');
     };
-    // ----------------------------
+    // -
     
     const midPoint = servicesData.length / 2;
     const firstRowData = servicesData.slice(0, midPoint);

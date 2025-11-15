@@ -41,7 +41,7 @@
     display: none;
 }
 
-/* --- Desktop Navigation Styles --- */
+/*  Desktop Navigation Styles  */
 .nav {
     display: flex;
     justify-content: space-between;
@@ -60,9 +60,9 @@
     color: #6a00ff;
 }
 
-/* ---------------------------------- */
+
 /* MOBILE MEDIA QUERIES (Max Width 768px) */
-/* ---------------------------------- */
+
 @media (max-width: 768px) {
     .header {
         flex-direction: row;
@@ -130,7 +130,7 @@
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    /* --- Mobile Menu (Navigation Links) --- */
+    /*  Mobile Menu (Navigation Links)  */
     .nav {
         align-items: center;
         display: flex;
@@ -158,5 +158,26 @@
         margin: 10px 0;
         padding: 10px 0;
         border-bottom: 1px solid #eee;
+    }
+}
+@media (max-width: 768px) {
+
+    .hamburger {
+        flex-shrink: 0;       /* Prevents shrinking */
+        width: 30px;          /* Lock fixed width */
+        height: 22px;         /* Lock fixed height */
+    }
+
+    .hamburger .line {
+        height: 3px;
+    }
+
+    /* Optional: reduce Contact Button slightly in ultra-small screens */
+    @media (max-width: 412px) {
+        .contact-button {
+            padding: 6px 14px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
     }
 }

@@ -119,9 +119,9 @@ html, body, #root {
     font-size: 1.6rem; /* Further reduced H2 size for very small screens */
 }
 }
-/* ----------------- */
+/* -- */
 /* Existing Styles   */
-/* ----------------- */
+/* -- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 body {
@@ -193,7 +193,7 @@ html, body, #root {
 }
 
 
-/* --- GLOBAL ANIMATIONS (Needed for Modal and others) --- */
+/*  GLOBAL ANIMATIONS (Needed for Modal and others)  */
 @keyframes zoomIn {
     from {
         opacity: 0;
@@ -224,7 +224,7 @@ html, body, #root {
 }
 
 
-/* --- Mobile Font Sizes --- */
+/*  Mobile Font Sizes  */
 @media (max-width: 768px) {
     .section-container {
         padding: 40px 5%; 
@@ -242,9 +242,9 @@ html, body, #root {
         font-size: 0.9rem;
     }
 }
-/* ----------------- */
+/* -- */
 /* Existing Styles   */
-/* ----------------- */
+/* -- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 body {
@@ -318,7 +318,7 @@ html, body, #root {
 }
 
 
-/* --- GLOBAL ANIMATIONS (from app.css) --- */
+/*  GLOBAL ANIMATIONS (from app.css)  */
 @keyframes zoomIn {
     from {
         opacity: 0;
@@ -349,7 +349,7 @@ html, body, #root {
 }
 
 
-/* --- Mobile Font Sizes and Gap Fixes --- */
+/*  Mobile Font Sizes and Gap Fixes  */
 @media (max-width: 768px) {
     .section-container {
         padding: 40px 5%; 
@@ -367,7 +367,7 @@ html, body, #root {
         font-size: 0.9rem;
     }
     
-    /* 🌟 FIX: Increase space below the 'Contact Us' tag only on mobile 🌟 */
+    /*  FIX: Increase space below the 'Contact Us' tag only on mobile  */
     .tag {
         margin-bottom: 15px; 
     }

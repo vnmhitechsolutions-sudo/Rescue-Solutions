@@ -1,6 +1,6 @@
-/* ---------------------------------- */
+
 /* 1. BASE STYLES & LAYOUT          */
-/* ---------------------------------- */
+
 .footer {
     background-color: #1e1e3f;
     color: #ccc;
@@ -114,9 +114,9 @@
 }
 
 
-/* ---------------------------------- */
+
 /* MOBILE MEDIA QUERIES (FIXED STACKING ORDER) */
-/* ---------------------------------- */
+
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
@@ -138,7 +138,7 @@
         flex-direction: column;
     }
     
-    /* 🌟 CRITICAL FIX: Ensure the desired stacking order using 'order' 🌟 */
+    /*  CRITICAL FIX: Ensure the desired stacking order using 'order'  */
     /* This overrides any hidden or default flex order settings */
     .footer-col.brand-col .logo {
         order: 1; /* Logo/Title first */

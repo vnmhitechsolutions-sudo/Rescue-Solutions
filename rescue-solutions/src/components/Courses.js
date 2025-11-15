@@ -4,7 +4,7 @@ import Footer from './Footer';
 import { BookOpen, MapPin, CheckCircle } from 'lucide-react';
 import './Courses.css';
 
-// --- Reusable Hook for Scroll Animations ---
+//  Reusable Hook for Scroll Animations 
 const useScrollAnimation = (ref, threshold = 0.1) => {
     const [isVisible, setIsVisible] = useState(false);
 
@@ -34,7 +34,7 @@ const useScrollAnimation = (ref, threshold = 0.1) => {
     return isVisible;
 };
 
-// --- Course Data ---
+//  Course Data 
 const courseData = [
     {
         id: 'fullstack-mern',
@@ -116,7 +116,7 @@ const Courses = () => {
     courseTitles.unshift('Select Course'); 
     
 
-    // --- Handlers ---
+    //  Handlers 
 
     const handleApplyClick = (courseTitle) => {
         setSelectedCourse(courseTitle); 
@@ -144,7 +144,7 @@ const Courses = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        // --- SIMULATED EMAIL.JS SUBMISSION ---
+        //  SIMULATED EMAIL.JS SUBMISSION 
         console.log("Submitting course application:", formData);
         
         // Show success modal
@@ -158,7 +158,7 @@ const Courses = () => {
         setIsSubmitted(false);
     };
     
-    // --- Rendering Functions ---
+    //  Rendering Functions 
 
     const renderCourseCard = (course, index) => (
         <div 
