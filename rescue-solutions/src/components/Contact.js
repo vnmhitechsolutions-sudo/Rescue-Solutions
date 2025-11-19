@@ -54,7 +54,7 @@ const Contact = () => {
         e.preventDefault();
 
         // Send data to Django Backend
-        axios.post('http://127.0.0.1:8000/api/contact/submit/', formData)
+        axios.post('http://192.168.29.178:8000/api/contact/submit/', formData)
             .then((response) => {
                 console.log('SUCCESS!', response.status);
                 setSubmissionStatus('success');
