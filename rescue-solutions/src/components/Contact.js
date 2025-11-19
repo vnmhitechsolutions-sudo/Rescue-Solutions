@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
+import emailjs from '@emailjs/browser';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import './Contact.css';
 
@@ -50,30 +50,36 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      // API URL (change to your backend URL)
+        // Email.js service credentials
+        const serviceID = 'service_m8x1y1a'; // Replace with your Service ID
+        const templateID = 'template_7gc1zzm'; // Replace with your Template ID
+        const publicKey = 'iAhlWmxHOW4zR-QbW'; // Replace with your Public Key
 
-      await axios.post("http://192.168.29.178:8000/", formData);
+        // Capture the current date and time
+        const currentDateTime = new Date().toLocaleString();
+        const templateParams = {
+            ...formData,
+            date: currentDateTime, // Add the 'date' field
+        };
 
-
-      // If successful
-      setSubmissionStatus("success");
-
-      // Reset form
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phoneNumber: "",
-        country: "",
-        message: "",
-      });
-
-    } catch (error) {
-      console.error(error);
-      setSubmissionStatus("error");
-    }
-  };
+        // Send the form data using Email.js
+        emailjs.send(serviceID, templateID, templateParams, publicKey)
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                setSubmissionStatus('success');
+                setFormData({ // Reset form after successful submission
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    phoneNumber: '',
+                    country: '',
+                    message: ''
+                });
+            }, (error) => {
+                console.log('FAILED...', error);
+                setSubmissionStatus('error');
+            });
+    };
 
   return (
     <section id="contact" className="contact-section section-container">
