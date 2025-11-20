@@ -372,22 +372,3 @@ html, body, #root {
         margin-bottom: 15px; 
     }
 }
-
-@media (max-width: 412px) {
-    .section-container {
-        padding: 30px 5%;
-        font-size: 0.9rem; 
-    }
-    .section-container h2 {
-        font-size: 1.6rem; 
-    }
-    .legal-content p, .legal-content li {
-        font-size: 0.9rem; 
-    }
-    .legal-content h2 {
-        font-size: 1.2rem; 
-    }
-    .text-primary {
-        font-size: 1.6rem; 
-    }
-}
