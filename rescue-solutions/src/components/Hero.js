@@ -42,8 +42,11 @@ const Hero = () => {
                     <span className="hitech-solution-text animate delay-0-5" style={{ color: '#33bcceff', fontWeight: 'normal' }}>Solutions</span>
                 </h1>
                 
-                <h1 className="animate delay-1">Transforming Ideas.
-                <br /><h1 className="text-primary">Delivering Excellence.</h1></h1>
+                <h1 className="animate delay-1">
+                    Transforming Ideas.
+                    <br />
+                    <span className="text-primary">Delivering Excellence.</span>
+                </h1>
                 <p className="subtitle animate delay-2">Where innovation meets execution.</p>
                 <p className="animate delay-3">Empowering businesses with cutting-edge technology solutions. We specialize in creating innovative job portals and digital transformation services.</p>
                 <a href="#contact" className="button animate delay-4">Get Started →</a>
