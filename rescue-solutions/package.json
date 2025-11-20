@@ -1,8 +1,8 @@
 {
   "name": "rescue-solutions",
   "version": "0.1.0",
+  "homepage": "https://vnm-webstie.vercel.app",
   "private": true,
-  "homepage": ".",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@testing-library/dom": "^10.4.1",
